@@ -115,6 +115,35 @@ else if(ex[1]=='*'){
     }
 
 
+
+
+    ///From here is Supto part
+
+    else if(esz==3 and ex[2]=='+' and ex[1]!='*' and ex[1]!='U' and ex[1]!='+'){
+        cout<<"Enter a string to verify [$ for empty string]: ";
+        cin>>str;
+        int sz=str.size();
+
+        if(ex[0]!=str[0] or sz==1)f=0;
+        if(f){
+            for(int i=1;i<sz;i++){
+                if(str[i]!=ex[1]){
+                    f=0;
+                    break;
+                }
+            }
+        }
+        if(f)cout<<"status: valid"<<endl;
+        else cout<<"status: invalid"<<endl;
+    }
+    else if(ex[0]=='U' or ex[0]=='*' or ex[0]=='+')cout<<"status: invalid expression"<<endl;
+    else cout<<"status: invalid expression"<<endl;
+}
+
+
+
+
+
 /// This is the Main part
 int main() {
     string input = "";
